@@ -5,8 +5,7 @@
 body {
   margin: 0;
   font-family: 'Karla', sans-serif;
-  background: #F5F7FB;
-  
+  background: #f5f7fb;
 }
 
 .center {
@@ -16,73 +15,83 @@ body {
 }
 
 header {
-text-align: center;
-margin-top: 200px;
+  text-align: center;
+  margin-top: 200px;
 }
 
-.header-text{
-font-family: 'Karla';
-font-weight: 700;
-font-size: 31.25px;
-text-align: center;
-color: #293264;
+.header-text {
+  font-family: 'Karla';
+  font-weight: 700;
+  font-size: 31.25px;
+  text-align: center;
+  color: #293264;
 }
 
-.header-paragraph { 
-font-weight: 400;
-font-size: 16px;
-line-height: 19px;
-color: #293264;
-text-align: center;
+.header-paragraph {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #293264;
+  text-align: center;
 }
 
-.header-button { 
-font-weight: 400;
-font-size: 16px;
-color: #F5F7FB;;
-border-radius: 15px;
-width: 193px;
-height: 52px;
-border: none;
-/* text-align: center; */
-background: #4D5B9E;
-border-radius: 15px;
-display: flex;
-justify-content: center;
-align-items: center;
-margin-top: 30px;
+.header-button {
+  font-weight: 400;
+  font-size: 16px;
+  color: #f5f7fb;
+  border-radius: 15px;
+  width: 193px;
+  height: 52px;
+  border: none;
+  /* text-align: center; */
+  background: #4d5b9e;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
 }
 
 .question-div {
-  border-bottom: 1px solid #DBDEF0;
+  border-bottom: 1px solid #dbdef0;
   margin: 20px 0px 20px 100px;
-
 }
 
 .question-text {
-font-weight: 700;
-font-size: 24px;
-/* line-height: 19px; */
-color: #293264;
-margin: 10px;
-/* width: 307px; */
+  font-weight: 700;
+  font-size: 24px;
+  /* line-height: 19px; */
+  color: #293264;
+  margin: 10px;
+  /* width: 307px; */
 }
 
 .options {
-width: fit-content;
-height: fit-content;
-/* background: #D6DBF5; */
-text-align: center;
-padding: 6px 5px;
-border-radius: 7.94239px;
-margin: 10px 10px 30px 10px;
-border: 1px solid #293264;
+  width: fit-content;
+  height: fit-content;
+  /* background: #D6DBF5; */
+  text-align: center;
+  padding: 6px 5px;
+  border-radius: 7.94239px;
+  margin: 10px 10px 30px 10px;
+  border: 1px solid #293264;
 }
-
 
 .center-text {
   display: flex;
 }
 .new {
- margin: auto
+  margin: auto;
+}
+
+.active {
+  background-color: #d6dbf5;
+}
+
+.correct {
+  background-color: #94d7a2;
+}
+
+.wrong {
+  background-color: #f8bcbc;
 }
