@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import Score from './components/Score'
 import './App.css'
 import IntroPage from './Pages/IntroPage'
 import Questions from './Pages/Questions'
@@ -9,13 +10,24 @@ function App() {
   const [selectedAnswers, setSelectedAnswers] = useState([])
   const [checkMode, setCheckMode] = useState(false)
 
+  const getQuestions = () => {
+    if (!start)
+      fetch('https://opentdb.com/api.php?amount=5&difficulty=medium')
+        .then(res => res.json())
+        .then(data => {
+          setQuestion(data.results)
+        })
+  }
+
   useEffect(() => {
-    fetch('https://opentdb.com/api.php?amount=5&difficulty=medium')
-      .then(res => res.json())
-      .then(data => {
-        setQuestion(data.results)
-      })
-  }, [])
+    getQuestions()
+  }, [start])
+
+  const restart = () => {
+    setStart(false)
+    setCheckMode(false)
+    setSelectedAnswers([])
+  }
 
   function selectAnswer(option, question) {
     const answeredQuestion = selectedAnswers.find(
@@ -39,7 +51,8 @@ function App() {
   }
 
   return (
-    <div className='App'>
+    <div className='main'>
+      <img src='top.png' className='top-right' />
       {!start && <IntroPage onStart={() => setStart(true)} />}
       {start && (
         <section>
@@ -55,14 +68,23 @@ function App() {
             ))}
         </section>
       )}
-      {questions.length > 0 && start && (
-        <button
-          onClick={() => setCheckMode(true)}
-          className='header-button new'
-        >
-          check
-        </button>
-      )}
+      {questions.length > 0 &&
+        start &&
+        (checkMode ? (
+          <Score
+            questions={questions}
+            selectedAnswers={selectedAnswers}
+            restart={restart}
+          />
+        ) : (
+          <button
+            onClick={() => setCheckMode(true)}
+            className='header-button new'
+          >
+            check
+          </button>
+        ))}
+      <img src='/bottom.png' className='bottom-left' />
     </div>
   )
 }

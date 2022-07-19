@@ -95,3 +95,24 @@ header {
 .wrong {
   background-color: #f8bcbc;
 }
+
+.score-cont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom-left,
+.top-right {
+  position: absolute;
+  z-index: -10;
+}
+
+.bottom-left {
+  bottom: 0;
+}
+
+.top-right {
+  top: 0;
+  right: 0;
+}
